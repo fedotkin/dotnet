@@ -13,3 +13,4 @@ C:\Users\User456\source\repos\dotnet\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.dl
 C:\Users\User456\source\repos\dotnet\ConsoleApp1\obj\Debug\net5.0\ref\ConsoleApp1.dll
 C:\Users\User456\source\repos\dotnet\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.pdb
 C:\Users\User456\source\repos\dotnet\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.genruntimeconfig.cache
+C:\Users\User456\source\repos\dotnet\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.csproj.AssemblyReference.cache
