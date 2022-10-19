@@ -7,5 +7,4 @@ This book is both a rapid tutorial and a permanent reference. You'll quickly mas
 - Concentrates on how C# features work and how to best use them for robust, high-performance code
 
 
-Expert's Voice in C# - Nash T. - Accelerated C# 2010 [2010, PDF, ENG]
-https://rutracker.org/forum/viewtopic.php?t=2654235
+Expert's Voice in C# - Trey Nash - [Accelerated C# 2010](https://www.amazon.com/Accelerated-2010-Experts-Voice-Trey/dp/1430225378)
