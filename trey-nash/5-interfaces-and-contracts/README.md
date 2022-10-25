@@ -1,4 +1,4 @@
-# Chapter 5. Interfaces and contracts
+# Chapter 5. Interfaces and contracts[^1]
 - Interfaces Define Types
 - Defining Interfaces
 - Implementing Interfaces
@@ -25,10 +25,16 @@
 </details>
 
 ---
+## About
+Chapter 5, “Interfaces and Contracts”,[^1] details interfaces and the role they play in the C# language. 
+Interfaces provide a functionality contract that types may choose to implement. You’ll learn the various 
+ways that a type may implement an interface, as well as how the runtime chooses which methods to call 
+when an interface method is called.
+
 ## Abstract
 During your years as a software developer, you’ve likely come across the notion of _interface-based programming_. If you’re familiar with the seminal
 book, _Design Patterns: Elements of Reusable Object-Oriented Software_, by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (known as the
-"Gang of Four"),[^1] then you know that many design patterns employ interface-style "contracts." If you’re not familiar with that book and its concepts,
+"Gang of Four"),[^2] then you know that many design patterns employ interface-style "contracts." If you’re not familiar with that book and its concepts,
 I urge you to read it. In this chapter, it is my goal to show you how you can model well-defined, versioned contracts using interfaces. In this context,
 <ins>a contract is an agreement by a type to support a set of functionality</ins>.
 
@@ -58,4 +64,5 @@ I urge you to read it. In this chapter, it is my goal to show you how you can mo
   </details>
 </details>
 
-[^1]: _Design Patterns: Elements of Reusable Object-Oriented Software_ by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (Boston, MA: Addison-Wesley Professional, 1995) is cited in the references at the end of this book. [Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
+[^1]: Cite this chapter: [Interfaces and Contracts](https://link.springer.com/chapter/10.1007/978-1-4302-2538-6_5) in [_Accelerated C# 2010_](https://link.springer.com/book/10.1007/978-1-4302-2538-6) by Trey Nash (Apress, 2010)
+[^2]: _Design Patterns: Elements of Reusable Object-Oriented Software_ by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (Boston, MA: Addison-Wesley Professional, 1995) is cited in the references at the end of this book. [Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
