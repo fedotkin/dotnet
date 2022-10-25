@@ -1,4 +1,7 @@
 # Chapter 5. Interfaces and contracts[^1]
+<details>
+  <summary><b>Table of Contents</b></summary>
+
 - Interfaces Define Types
 - Defining Interfaces
 - Implementing Interfaces
@@ -8,11 +11,12 @@
 - Contracts
 - Choosing Between Interfaces and Classes
 - Summary
-
-<details>
-  <summary><i>RU</i></summary>
+</details>
 
 ## Глава 5. Интерфейсы и контракты
+<details>
+  <summary><b>Оглавление</b></summary>
+
 - Интерфейсы определяют типы
 - Определение интерфейсов
 - Реализация интерфейсов
@@ -63,6 +67,8 @@ I urge you to read it. In this chapter, it is my goal to show you how you can mo
     the types themselves. In the .NET environment, interfaces are types.
   </details>
 </details>
+
+##
 
 [^1]: Cite this chapter: [Interfaces and Contracts](https://link.springer.com/chapter/10.1007/978-1-4302-2538-6_5) in [_Accelerated C# 2010_](https://link.springer.com/book/10.1007/978-1-4302-2538-6) by Trey Nash (Apress, 2010)
 [^2]: _Design Patterns: Elements of Reusable Object-Oriented Software_ by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (Boston, MA: Addison-Wesley Professional, 1995) is cited in the references at the end of this book. [Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
