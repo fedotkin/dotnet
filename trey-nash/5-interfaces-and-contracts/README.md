@@ -1,4 +1,13 @@
 # Chapter 5. Interfaces and contracts
+- Interfaces Define Types
+- Defining Interfaces
+- Implementing Interfaces
+- Interface Member Matching Rules
+- Explicit Interface Implementation with Value Types
+- Versioning Considerations
+- Contracts
+- Choosing Between Interfaces and Classes
+- Summary
 ---
 ## Глава 5. Интерфейсы и контракты
 - Интерфейсы определяют типы
@@ -9,4 +18,4 @@
 - Соображения, касающиеся версий
 - Контракты
 - Выбор между интерфейсами и классами
-
+- Резюме
