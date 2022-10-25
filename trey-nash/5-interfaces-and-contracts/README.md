@@ -8,7 +8,10 @@
 - Contracts
 - Choosing Between Interfaces and Classes
 - Summary
----
+
+<details>
+  <summary>In Russian</summary>
+
 ## Глава 5. Интерфейсы и контракты
 - Интерфейсы определяют типы
 - Определение интерфейсов
@@ -19,3 +22,4 @@
 - Контракты
 - Выбор между интерфейсами и классами
 - Резюме
+</details>
