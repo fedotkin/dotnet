@@ -1,1 +1,0 @@
-New dotnet project from Alex and Roman
