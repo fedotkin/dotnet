@@ -1,7 +1,9 @@
-# "dotnet" repository
----
+# The 'dotnet' Lab: .NET, C#
+
+# <img src='https://github.com/fedotkin/dotnet/blob/feature/4/dotnet_logo.svg' height='100' alt='.NET Logo' /><img src='img src='https://github.com/fedotkin/dotnet/blob/feature/4/csharp_logo.png' height='100' alt='C# Logo' />
+
 ## About
-This repository created by Alex and Roman to study .NET Framework and C#.
+Learning laboratory for .NET Framework and C# language. Researches, books, coding challenges, small projects.
 
 ## .NET Framework
 .NET and .NET Framework
