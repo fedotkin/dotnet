@@ -1,4 +1,4 @@
-# Chapter 5. Interfaces and contracts[^1]
+# Chapter 5: Interfaces and contracts[^1]
 <details>
   <summary><b>Table of Contents</b></summary>
 

@@ -1,4 +1,4 @@
-# Chaper 17: Dynamic Types
+# Chapter 17: Dynamic Types
 <details>
   <summary><b>Table of Contents</b></summary>
 
