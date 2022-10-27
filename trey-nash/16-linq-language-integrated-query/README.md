@@ -1,4 +1,4 @@
-# Chaper 16: LINQ: Language Integrated Query
+# Chapter 16: LINQ: Language Integrated Query
 <details>
   <summary><b>Table of Contents</b></summary>
 

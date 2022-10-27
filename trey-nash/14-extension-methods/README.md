@@ -1,4 +1,4 @@
-# Chaper 14: Extension Methods
+# Chapter 14: Extension Methods
 <details>
   <summary><b>Table of Contents</b></summary>
 
