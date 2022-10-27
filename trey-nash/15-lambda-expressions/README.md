@@ -1,4 +1,4 @@
-# Chaper 15: Lambda Expressions
+# Chapter 15: Lambda Expressions
 <details>
   <summary><b>Table of Contents</b></summary>
 
