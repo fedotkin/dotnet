@@ -1,11 +1,12 @@
 # The 'dotnet' Lab: .NET, C#
 
-<img src='https://github.com/fedotkin/dotnet/blob/master/dotnet_logo.svg' height='100' alt='.NET Logo' /><img src='https://github.com/fedotkin/dotnet/blob/master/csharp_logo.png' height='100' alt='C# Logo' />
+<img src='https://github.com/fedotkin/dotnet/blob/master/dotnet_logo.svg' height='100' alt='.NET Logo' /> <img src='https://github.com/fedotkin/dotnet/blob/master/csharp_logo.png' height='100' alt='C# Logo' />
 
 ## About
 Learning laboratory for .NET Framework and C# language. Researches, books, coding challenges, small projects.
 
-## .NET Framework
+
+## .NET Framework[^1]
 .NET and .NET Framework
 .NET is a developer platform made up of tools, programming languages, and libraries for building many different types of applications.
 
@@ -16,9 +17,7 @@ There are various implementations of .NET. Each implementation allows .NET code 
 - Xamarin/Mono is a .NET implementation for running apps on all the major mobile operating systems, including iOS and Android.
 .NET Standard is a formal specification of the APIs that are common across .NET implementations. This allows the same code and libraries to run on different implementations.
 
-What the [Wikipedia](https://en.wikipedia.org/wiki/.NET_Framework) says.
-
-## C#
+## C#[^2]
 C# is a strongly typed object-oriented programming language. C# is open source, simple, modern, flexible, and versatile. In this article, let’s learn what C# is, what C# can do, and how C# is different than C++ and other programming languages.
  
 A programming language on computer science is a language that is used to write software programs.
@@ -33,4 +32,5 @@ Key characteristics of C# language include:
 - Versatile
 - Evolving
 
-What the [Wikipedia](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) says.
+[^1]: What the [Wikipedia](https://en.wikipedia.org/wiki/.NET_Framework) says about .NET Framework.
+[^2]: What the [Wikipedia](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) says about C#.
