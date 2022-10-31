@@ -1,6 +1,6 @@
 # The 'dotnet' Lab: .NET, C#
 
-<img src='https://github.com/fedotkin/dotnet/blob/master/dotnet_logo.svg' height='100' alt='.NET Logo' /> <img src='https://github.com/fedotkin/dotnet/blob/master/csharp_logo.png' height='100' alt='C# Logo' />
+<img src="https://github.com/fedotkin/dotnet/blob/feature/4/dotnet_logo.png" height="100" alt=".NET Logo" /> <img src="https://github.com/fedotkin/dotnet/blob/feature/4/csharp_logo.png" height="100" alt="C# Logo" />
 
 ## About
 Learning laboratory for .NET Framework and C# language. Researches, books, coding challenges, small projects.
@@ -18,19 +18,9 @@ There are various implementations of .NET. Each implementation allows .NET code 
 .NET Standard is a formal specification of the APIs that are common across .NET implementations. This allows the same code and libraries to run on different implementations.
 
 ## C#[^2]
-C# is a strongly typed object-oriented programming language. C# is open source, simple, modern, flexible, and versatile. In this article, let’s learn what C# is, what C# can do, and how C# is different than C++ and other programming languages.
- 
-A programming language on computer science is a language that is used to write software programs.
-  
-C# is a programming language developed and launched by Microsoft in 2001. C# is a simple, modern, and object-oriented language that provides modern day developers flexibility and features to build software that will not only work today but will be applicable for years in the future.
- 
-Key characteristics of C# language include:
-- Modern and easy
-- Fast and open source
-- Cross platform
-- Safe
-- Versatile
-- Evolving
+C# is a modern, object-oriented, and type-safe programming language. C# enables developers to build many types of secure and robust applications that run in .NET. 
 
-[^1]: What the [Wikipedia](https://en.wikipedia.org/wiki/.NET_Framework) says about .NET Framework.
-[^2]: What the [Wikipedia](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) says about C#.
+Several C# features help create robust and durable applications. Garbage collection automatically reclaims memory occupied by unreachable unused objects. Nullable types guard against variables that don't refer to allocated objects. Exception handling provides a structured and extensible approach to error detection and recovery. Lambda expressions support functional programming techniques. Language Integrated Query (LINQ) syntax creates a common pattern for working with data from any source. Language support for asynchronous operations provides syntax for building distributed systems. C# has a unified type system. All C# types, including primitive types such as int and double, inherit from a single root object type. All types share a set of common operations. Values of any type can be stored, transported, and operated upon in a consistent manner. Furthermore, C# supports both user-defined reference types and value types. C# allows dynamic allocation of objects and in-line storage of lightweight structures. C# supports generic methods and types, which provide increased type safety and performance. C# provides iterators, which enable implementers of collection classes to define custom behaviors for client code.
+
+[^1]: What the [Microsoft](https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet-framework) says about .NET Framework.
+[^2]: What the [Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/) says about C#.
