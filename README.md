@@ -1,6 +1,6 @@
 # The 'dotnet' Lab: .NET, C#
 
-<img src="https://github.com/fedotkin/dotnet/blob/feature/4/dotnet_logo.png" height="100" alt=".NET Logo" /> <img src="https://github.com/fedotkin/dotnet/blob/feature/4/csharp_logo.png" height="100" alt="C# Logo" />
+<img src="../assets/dotnet-logo.svg?raw=true" height="100" alt=".NET Logo" />&nbsp;&nbsp;&nbsp;<img src="../assets/csharp-logo.png?raw=true" height="100" alt="C# Logo" />
 
 ## About
 Learning laboratory for .NET Framework and C# language. Researches, books, coding challenges, small projects.
