@@ -1,6 +1,8 @@
 # The book: Accelerated C# 2010 by Trey Nash (Apress, 2010)
 > “The fast way to the latest and greatest in C# programming and .NET 4.0”
 
+![Trey Nash book. Cover page](../../assets/trey-nash-book-cover-page.png)
+
 ## About this book
 C# 2010 offers powerful new features, and this book is the fastest path to mastering them — and 
 the rest of C# — for both experienced C# programmers moving to C# 2010 and programmers moving to 
