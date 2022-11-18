@@ -77,6 +77,8 @@ versioned contracts using interfaces. In this context,
 **Repository**[^3] **path**: [accelerated-csharp-2010](https://github.com/Apress/accelerated-csharp-2010)
 / [5_interfaces](https://github.com/Apress/accelerated-csharp-2010/tree/master/5_interfaces)
 
+
+### References
 [^1]: Cite this chapter: [Interfaces and Contracts](https://link.springer.com/chapter/10.1007/978-1-4302-2538-6_5) in [_Accelerated C# 2010_](https://link.springer.com/book/10.1007/978-1-4302-2538-6) by Trey Nash (Apress, 2010)
 [^2]: _Design Patterns: Elements of Reusable Object-Oriented Software_ by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (Boston, MA: Addison-Wesley Professional, 1995) is cited in the references at the end of this book. [Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
 [^3]: GitHub repository: [Apress Source Code](https://github.com/Apress) / [accelerated-csharp-2010](https://github.com/Apress/accelerated-csharp-2010)
