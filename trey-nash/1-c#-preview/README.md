@@ -1,4 +1,4 @@
-# Chapter 1: C# Preview [^1]
+# Chapter 1: C# Preview[^1]
 <details>
   <summary><b>Table of Contents</b></summary>
 
@@ -43,7 +43,7 @@ C++, and then go through an elementary “Hello World!” example for good measu
 experience building .NET applications, you may want to skip this chapter. However, you may want to 
 read the section “Overview of New C# 4.0 Features.”
 
-## Source code [^1]
+## Source code[^1]
 **Repository**[^3] **path**: [accelerated-csharp-2010](https://github.com/Apress/accelerated-csharp-2010)
 / [intro_to_c_sharp](https://github.com/Apress/accelerated-csharp-2010/tree/master/intro_to_c_sharp)
 
