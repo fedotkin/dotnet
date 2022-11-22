@@ -23,24 +23,19 @@ public class ClassA : ClassIA, IB
     public override void MethodA()
     {
         Console.WriteLine("pip_1");
-        EventA(this, new EventArgs());
     }
     void IB.MethodA() => Console.WriteLine("pip_2");
     public int MethodB(int index) { return index * 10; }
     public override bool PropA { get { return true; } }
     public override int this[int index] { get { return 1; } }
     public override event EventHandler EventA;
+
 }
 class Program
 {
-    static void Message(object sender, EventArgs e)
-    {
-        Console.WriteLine("Внимание, произошло событие!");
-    }
     static void Main(string[] args)
     {
         ClassA obj = new ClassA();
-        obj.EventA += Message;
         obj.MethodA();
         ((IB)obj).MethodA();
         Console.WriteLine(obj.MethodB(5));
