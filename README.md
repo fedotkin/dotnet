@@ -22,5 +22,7 @@ C# is a modern, object-oriented, and type-safe programming language. C# enables 
 
 Several C# features help create robust and durable applications. Garbage collection automatically reclaims memory occupied by unreachable unused objects. Nullable types guard against variables that don't refer to allocated objects. Exception handling provides a structured and extensible approach to error detection and recovery. Lambda expressions support functional programming techniques. Language Integrated Query (LINQ) syntax creates a common pattern for working with data from any source. Language support for asynchronous operations provides syntax for building distributed systems. C# has a unified type system. All C# types, including primitive types such as int and double, inherit from a single root object type. All types share a set of common operations. Values of any type can be stored, transported, and operated upon in a consistent manner. Furthermore, C# supports both user-defined reference types and value types. C# allows dynamic allocation of objects and in-line storage of lightweight structures. C# supports generic methods and types, which provide increased type safety and performance. C# provides iterators, which enable implementers of collection classes to define custom behaviors for client code.
 
-[^1]: What the [Microsoft](https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet-framework) says about .NET Framework.
-[^2]: What the [Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/) says about C#.
+## References
+Links for information
+[^1]: What is .NET Framework? [Microsoft](https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet-framework)
+[^2]: A tour of the C# language [Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)
