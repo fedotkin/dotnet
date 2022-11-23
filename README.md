@@ -15,7 +15,7 @@ There are various implementations of .NET. Each implementation allows .NET code 
 2. **.NET** is a cross-platform implementation for running websites, services, and console apps on Windows, Linux, and macOS. [.NET is open source](https://dotnet.microsoft.com/en-us/platform/open-source) on GitHub. .NET was previously called .NET Core.
 3. [**Xamarin/Mono**](https://dotnet.microsoft.com/en-us/learn/xamarin/what-is-xamarin) is a .NET implementation for running apps on all the major mobile operating systems, including iOS and Android.
 
-## A tour of the C# language[^2]
+## A tour of the C# language[^2][^3]
 C# is a modern, object-oriented, and type-safe programming language. C# enables developers to build many types of secure and robust applications that run in .NET. C# has its roots in the C family of languages and will be immediately familiar to C, C++, Java, and JavaScript programmers. This tour provides an overview of the major components of the language in C# 11 and earlier. If you want to explore the language through interactive examples, try the [introduction to C#](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/) tutorials.
 
 C# is an object-oriented, ***component-oriented*** programming language. C# provides language constructs to directly support these concepts, making C# a natural language in which to create and use software components. Since its origin, C# has added features to support new workloads and emerging software design practices. At its core, C# is an ***object-oriented*** language. You define types and their behavior.
@@ -25,4 +25,6 @@ Several C# features help create robust and durable applications. [***Garbage col
 ## References
 Links for information
 [^1]: What is .NET Framework? [Microsoft](https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet-framework)
-[^2]: A tour of the C# language [Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)
+[^2]: C# docs - get started, tutorials, reference [Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/)
+[^3]: A tour of the C# language [Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)
+
