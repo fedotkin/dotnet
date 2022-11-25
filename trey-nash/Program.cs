@@ -1,44 +1,26 @@
-﻿using System;
-/*public interface IA
-{
-    void MethodA();
-    bool PropA { get; }
-    int this[int index] { get; }
-    event EventHandler EventA;
-}*/
-public abstract class ClassIA
-{
-    public abstract void MethodA();
-    public abstract bool PropA { get; }
-    public abstract int this[int index] { get; }
-    public abstract event EventHandler EventA;
-}
-public interface IB
-{
-    void MethodA();
-    int MethodB(int index);
-}
-public class ClassA : ClassIA, IB
-{
-    public override void MethodA()
-    {
-        Console.WriteLine("pip_1");
-    }
-    void IB.MethodA() => Console.WriteLine("pip_2");
-    public int MethodB(int index) { return index * 10; }
-    public override bool PropA { get { return true; } }
-    public override int this[int index] { get { return 1; } }
-    public override event EventHandler EventA;
-
-}
+﻿using ChapterExercises._5_interfaces_and_contracts;
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        ClassA obj = new ClassA();
-        obj.MethodA();
-        ((IB)obj).MethodA();
-        Console.WriteLine(obj.MethodB(5));
+        try
+        {
+            Console.Write("Enter chapter number (1-17): ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            switch (num)
+            {
+                case 5:
+                    Chapter5.Run();
+                    break;
+                default:
+                    Console.WriteLine("Chapter {0}: sorry, no content", num);
+                    break;
+            }
+        }
+        catch
+        {
+            Console.WriteLine("Error");
+        }
     }
 }
 
