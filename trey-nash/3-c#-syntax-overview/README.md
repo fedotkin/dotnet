@@ -60,6 +60,12 @@ Chapter 3, “C# Syntax Overview,”[^1] surveys the C# language syntax. I intro
 fundamental kinds of types within the CLR: value types and reference types. I also describe namespaces 
 and how you can use them to logically partition types and functionality within your applications.
 
+&nbsp;&nbsp;&nbsp; [Chapters 4](../4-classes-structs-and-objects/) through [13](../13-in-search-of-c%23-canonical-forms/) 
+provide in-depth descriptions on how to employ useful idioms, design
+patterns, and best practices in your C# programs and designs. I’ve tried hard to put these chapters in
+logical order, but occasionally one chapter may reference a technique or topic covered in a later chapter.
+It is nearly impossible to avoid this situation, but I tried to minimize it as much as possible.
+
 ## Abstract
 This chapter introduces you to the syntax of the C# language. It’s assumed that you have a reasonable 
 amount of experience with C++ or Java, because C# shares a similar syntax. This is no accident. The 
