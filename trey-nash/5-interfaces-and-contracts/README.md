@@ -4,11 +4,19 @@
 
 - Interfaces Define Types
 - Defining Interfaces
+  * What Can Be in an Interface?
+  * Interface Inheritance and Member Hiding
 - Implementing Interfaces
+  * Implicit Interface Implementation
+  * Explicit Interface Implementation
+  * Overriding Interface Implementations in Derived Classes
+  * Beware of Side Effects of Value Types Implementing Interfaces
 - Interface Member Matching Rules
 - Explicit Interface Implementation with Value Types
 - Versioning Considerations
 - Contracts
+  * Contracts Implemented with Classes
+  * Interface Contracts
 - Choosing Between Interfaces and Classes
 - Summary
 </details>
@@ -19,11 +27,19 @@
 
 - Интерфейсы определяют типы
 - Определение интерфейсов
+  * Что может быть интерфейсом?
+  * Наследование интерфейсов и сокрытие членов
 - Реализация интерфейсов
+  * Неявная реализация интерфейса
+  * Явная реализация интерфейса
+  * Переопределение реализаций интерфейсов в производных классах
+  * Остерегайтесь побочных эффектов от реализации интерфейсов типами значений
 - Правила сопоставления членов интерфейсов
 - Явная реализация интерфейса с помощью типа значений
 - Соображения, касающиеся версий
 - Контракты
+  * Контракты, реализованные классами
+  * Контракты интерфейса
 - Выбор между интерфейсами и классами
 - Резюме
 </details>
@@ -45,9 +61,9 @@ versioned contracts using interfaces. In this context,
 <ins>a contract is an agreement by a type to support a set of functionality</ins>.
 
 <details>
-  <summary><b>...</b></summary>
+  <summary></summary>
   
-  If you’ve done any COM or CORBA development over the years, then you’ve most definitely been doing
+  &nbsp;&nbsp;&nbsp; If you’ve done any COM or CORBA development over the years, then you’ve most definitely been doing
   interface-based development. In fact, the interface is the only form of communication between components
   in COM. Therefore, much of the design complexity rests in developing solid interfaces before you write any
   lines of implementation code. Failure to follow this paradigm has been the source of many problems. For example,
@@ -62,8 +78,8 @@ versioned contracts using interfaces. In this context,
   making it easy for you to add a new method to a class and annotate it as a web service method.
   
   <details>
-    <summary><b>...</b></summary> 
-    In a well-designed, interface-based system, such as in service-oriented architecture (SOA) systems,
+    <summary></summary> 
+    &nbsp;&nbsp;&nbsp; In a well-designed, interface-based system, such as in service-oriented architecture (SOA) systems,
     you should always design the interface first, as it’s the contract between components. The contract drives
     the implementation rather than the implementation driving, or defining, the contract. Unfortunately, too
     many tools in the past and even up to the present have promoted this backward development. But just because
@@ -76,7 +92,6 @@ versioned contracts using interfaces. In this context,
 ## Source code[^1]
 **Repository**[^3] **path**: [accelerated-csharp-2010](https://github.com/Apress/accelerated-csharp-2010)
 / [5_interfaces](https://github.com/Apress/accelerated-csharp-2010/tree/master/5_interfaces)
-
 
 ### References
 [^1]: Cite this chapter: [Interfaces and Contracts](https://link.springer.com/chapter/10.1007/978-1-4302-2538-6_5) in [_Accelerated C# 2010_](https://link.springer.com/book/10.1007/978-1-4302-2538-6) by Trey Nash (Apress, 2010)
