@@ -30,7 +30,7 @@
 
 ---
 ## About
-Chapter 1, "C# Preview,"[^1] gives a quick glimpse of what a simple C# application looks like, and it
+Chapter 1, “C# Preview,”[^1] gives a quick glimpse of what a simple C# application looks like, and it
 describes some basic differences between the C# programming environment and the native C++ 
 environment.
 
@@ -39,7 +39,9 @@ This is a book for experienced object-oriented developers; therefore, I assume t
 some familiarity with the .NET runtime. _Essential .NET Volume 1: The Common Language Runtime_ by 
 Don Box (Boston, MA: Addison-Wesley, 2002)[^2] is an excellent book specifically covering the .NET 
 runtime. Additionally, it’s important to look at some of the similarities and differences between C# and 
-C++, and then go through an elementary “Hello World!” example for good measure. If you already have 
+C++, and then go through an elementary 
+[“Hello World!”](https://github.com/Apress/accelerated-csharp-2010/blob/master/intro_to_c_sharp/hello_world.cs)
+example for good measure. If you already have 
 experience building .NET applications, you may want to skip this chapter. However, you may want to 
 read the section “Overview of New C# 4.0 Features.”
 
