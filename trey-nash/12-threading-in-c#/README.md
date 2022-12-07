@@ -91,7 +91,7 @@ The mere mention of multithreading can strike fear in the hearts of some program
 fires them up for a good challenge. No matter how you react to the subject, multithreading is an area
 riddled with minefields. Unless you show due diligence, a threading bug can jump up and bite you—and
 bite you in a place where you cannot seem to find it easily. Threading bugs can be among the hardest to
-find and they are hard enough to find on a single-processor machine,; add more processors and cores,
+find and they are hard enough to find on a single-processor machine; add more processors and cores,
 and the bugs can become even harder to find. In fact, some threading bugs don’t even rear their ugly
 head until you run your application on a multiprocessor machine, because that’s the only way to get true
 concurrent multithreading. For this reason, I always advise anyone developing a multithreaded
