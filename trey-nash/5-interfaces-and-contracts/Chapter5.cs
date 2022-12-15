@@ -1,9 +1,9 @@
 ﻿namespace Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts
 {
-    public class Chapter5
+    static class Chapter5
     {
         /// <summary>
-        /// Run method (calls a demo of the Exercise1.cs class)
+        /// Runs the demo of <see cref="Exercise1"/>.
         /// </summary>
         public static void Run()
         {

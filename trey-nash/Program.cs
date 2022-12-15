@@ -2,7 +2,7 @@
 class Program
 {
     /// <summary>
-    /// Book chapter selection
+    /// Main entry point of the program.
     /// </summary>
     static void Main()
     {
@@ -13,6 +13,7 @@ class Program
             try { chapterNo = Convert.ToInt32(Console.ReadLine()); }
             catch { chapterNo = 0; }
         }
+        // Select book chapter and run the demo
         switch (chapterNo)
         {
             case 5:

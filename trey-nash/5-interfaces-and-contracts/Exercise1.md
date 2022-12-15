@@ -1,5 +1,6 @@
 There is this code:
 
+```csharp
 public interface IA {
     void MethodA();
     bool PropA { get; }
@@ -14,8 +15,9 @@ public class ClassA : IA, IB
 {
     ...
 }
+```
 
-Add the body of class ClassA. 
-Before that, rewrite interface IA via an abstract class definition.
+- Add the body of class ClassA. 
+- Before that, rewrite interface IA via an abstract class definition.
 That is, comment out IA and define a new base abstract class, ClassIA
 (the abstract class ClassIA will be fully abstract: all signatures are abstract)
