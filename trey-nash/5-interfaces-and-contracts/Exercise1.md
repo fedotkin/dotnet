@@ -1,4 +1,4 @@
-There is this code:
+Given this code:
 
 ```csharp
 public interface IA {
@@ -13,11 +13,11 @@ public interface IB {
 }
 public class ClassA : IA, IB
 {
-    ...
+    //...
 }
 ```
 
-- Add the body of class ClassA. 
-- Before that, rewrite interface IA via an abstract class definition.
-That is, comment out IA and define a new base abstract class, ClassIA
-(the abstract class ClassIA will be fully abstract: all signatures are abstract)
+- Add the body of the ClassA class. 
+- Before that, rewrite IA interface via an abstract class definition.
+Note! Don't comment out the IA interface, and define a new base abstract ClassIA class.
+Also, note please, the abstract ClassIA class will be fully abstract: all signatures are abstract.
