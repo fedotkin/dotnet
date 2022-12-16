@@ -17,7 +17,7 @@ public class ClassA : IA, IB
 }
 ```
 
-- Add the body of the ClassA class. 
-- Before that, rewrite IA interface via an abstract class definition.
-Note! Don't comment out the IA interface, and define a new base abstract ClassIA class.
-Also, note please, the abstract ClassIA class will be fully abstract: all signatures are abstract.
+- Add the body of the `ClassA` class. 
+- Rewrite `IA` interface via an abstract class definition.
+Note! Don't comment out the `IA` interface, and define a new base abstract `ClassIA` class.
+Also, note please, the abstract `ClassIA` class will be fully abstract: all signatures are abstract.
