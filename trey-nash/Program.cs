@@ -20,7 +20,7 @@ class Program
                 Chapter5.Run();
                 break;
             default:
-                Console.WriteLine("Chapter {0}: sorry, no content", chapterNo);
+                Console.WriteLine("Chapter {0}: Sorry, there are no exercises and no implemented solutions to demonstrate!", chapterNo);
                 break;
         }
     }

@@ -1,12 +1,12 @@
 ﻿namespace Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts
 {
     /// <summary>
-    /// Here are the classes and interfaces for example
+    /// The classes and interfaces of Exercise #1.
     /// </summary>
     internal class Exercise1
     {
         /// <summary>
-        /// Initial interface which is rewritten as abstract class <see cref="ClassIA"/>
+        /// Initial interface which is rewritten as the abstract <see cref="ClassIA" /> class.
         /// </summary>
         public interface IA
         {
@@ -16,7 +16,7 @@
             event EventHandler EventA;
         }
         /// <summary>
-        /// Abstract class instead of interface <see cref="IA"/> (all signatures are abstract)
+        /// Abstract class instead of of the <see cref="IA" /> interface (all signatures are abstract)
         /// </summary>
         public abstract class ClassIA
         {
@@ -26,7 +26,7 @@
             public abstract event EventHandler EventA;
         }
         /// <summary>
-        /// Interface that is used for inheritance in the new base abstract class <see cref="ClassA"/>
+        /// Interface that is used for inheritance in the new base abstract <see cref="ClassA"/> class
         /// </summary>
         public interface IB
         {
@@ -34,7 +34,7 @@
             int MethodB(int index);
         }
         /// <summary>
-        /// The new base abstract class that inherits abstract class <see cref="ClassIA"/> and interface <see cref="IB"/>
+        /// The new base abstract class that inherits the abstract <see cref="ClassIA"/> class and the <see cref="IB"/> interface
         /// </summary>
         public class ClassA : ClassIA, IB
         {
