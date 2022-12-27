@@ -1,6 +1,6 @@
 ﻿using Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
-//TODO
-//namespace Fedotkin.Dotnet.TreyNash.General;
+// TODO: Define root namespace explicitly in the project.
+//namespace Fedotkin.Dotnet.TreyNash;
 
 /// <summary>
 /// Main entry point of the program.
