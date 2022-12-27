@@ -1,4 +1,5 @@
 ﻿using Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
+
 // TODO: Issue #32. Define root namespace explicitly in the project.
 //namespace Fedotkin.Dotnet.TreyNash;
 
