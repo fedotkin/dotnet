@@ -1,4 +1,5 @@
-﻿using Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
+﻿using Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
+using Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
 
 // TODO: Issue #32. Define root namespace explicitly in the project.
 //namespace Fedotkin.Dotnet.TreyNash;
@@ -16,6 +17,9 @@ while (chapterNo == 0)
 // Select book chapter and run the demo
 switch (chapterNo)
 {
+    case 1:
+        Chapter1.Run();
+        break;
     case 5:
         Chapter5.Run();
         break;
