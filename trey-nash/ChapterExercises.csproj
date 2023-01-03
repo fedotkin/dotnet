@@ -9,12 +9,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Console.Services\**" />
     <Compile Remove="console\**" />
     <Compile Remove="tests\**" />
+    <EmbeddedResource Remove="Console.Services\**" />
     <EmbeddedResource Remove="console\**" />
     <EmbeddedResource Remove="tests\**" />
+    <None Remove="Console.Services\**" />
     <None Remove="console\**" />
     <None Remove="tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Console.Services\ConsoleServices.csproj" />
   </ItemGroup>
 
 </Project>

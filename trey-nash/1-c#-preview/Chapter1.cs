@@ -1,19 +1,29 @@
 ﻿using Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
+using Fedotkin.Dotnet.TreyNash.ConsoleServices;
+using Fedotkin.Dotnet.TreyNash.ConsoleServices.Implementations;
+using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
 
 namespace Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
 
 public static class Chapter1
 {
+    private static readonly IConsoleService _console;
+
+    static Chapter1()
+    {
+        _console = new DefaultConsoleService();
+    }
+
     /// <summary>
     /// Runs the demo of <see cref="Exercise1"/>.
     /// </summary>
     public static void Run()
     {
-        Console.Write("Enter task number of Exercise1 (1-2): ");
+        _console.Write("Enter task number of Exercise1 (1-2): ");
         int taskNo = 0;
         while (taskNo == 0)
         {
-            try { taskNo = Convert.ToInt32(Console.ReadLine()); }
+            try { taskNo = Convert.ToInt32(_console.ReadLine()); }
             catch { taskNo = 0; }
         }
         // Select task number
@@ -26,7 +36,7 @@ public static class Chapter1
                 Task2();
                 break;
             default:
-                Console.WriteLine("Task {0}: Sorry, there are no task!", taskNo);
+                _console.WriteLine("Task {0}: Sorry, there are no task!", taskNo);
                 break;
         }
     }
