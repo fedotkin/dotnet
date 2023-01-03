@@ -2,7 +2,7 @@
 
 namespace Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
 
-static class Chapter1
+public static class Chapter1
 {
     /// <summary>
     /// Runs the demo of <see cref="Exercise1"/>.
