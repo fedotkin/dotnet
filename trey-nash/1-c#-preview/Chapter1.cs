@@ -15,12 +15,11 @@ public static class Chapter1
     }
 
     /// <summary>
-    /// Runs the demo of <see cref="Exercise1"/>.
+    /// Runs the demo of <see cref="TextCompression"/>.
     /// </summary>
     public static void Run()
     {
-        _console.Write("Enter task number of Exercise1 (1-2): ");
-        int taskNo = 0;
+        Console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(TextCompression)} (1-2): "); int taskNo = 0;
         while (taskNo == 0)
         {
             try { taskNo = Convert.ToInt32(_console.ReadLine()); }
@@ -42,21 +41,21 @@ public static class Chapter1
     }
 
     /// <summary>
-    /// Start task 1 from Exercise1
+    /// Starts <see cref="Task1"/> method from the <see cref="Exercise1"/> class.
     /// </summary>
     public static void Task1()
     {
-        string filename = @"..\..\..\1-c#-preview\Exercise1_1.txt";
-        Exercise1_1.Text_stream(filename);
+        string fileName = "Exercise1.txt";
+        TextCompression.TextReads(fileName);
     }
 
     /// <summary>
-    /// Start task 2 from Exercise1
+    /// Starts <see cref="Task2"/> method from the <see cref="Exercise1"/> class.
     /// </summary>
     public static void Task2()
     {
-        List<string> start_list = new List<string>(); //List of source strings
-        start_list.Add(@"
+        List<string> startList = new List<string>(); // List of source strings
+        startList.Add(@"
  _   _      _ _         _    _            _     _ _ 
 | | | |    | | |       | |  | |          | |   | | |
 | |_| | ___| | | ___   | |  | | ___  _ __| | __| | |
@@ -65,16 +64,25 @@ public static class Chapter1
 \_| |_/\___|_|_|\___/   \/  \/ \___/|_|  |_|\__,_(_)");
 
         Console.WriteLine("Start list:");
-        foreach (var item in start_list) Console.WriteLine(item);
+        foreach (var item in startList)
+        {
+            Console.WriteLine(item);
+        }
 
-        List<string> compressed_list = new List<string>(); //Create a new list for compressed strings
-        compressed_list = Exercise1_2.Сompression(start_list);
+        List<string> compressedList = new List<string>(); // Create a new list for compressed strings
+        compressedList = TextCompression.Сompress(startList);
         Console.WriteLine("\nCompressed list:");
-        foreach (var item in compressed_list) Console.WriteLine(item);
+        foreach (var item in compressedList)
+        {
+            Console.WriteLine(item);
+        }
 
-        List<string> decompressed_list = new List<string>(); //Create a new list for unpacked strings
-        decompressed_list = Exercise1_2.Decompression(compressed_list);
+        List<string> decompressedList = new List<string>(); // Create a new list for unpacked strings
+        decompressedList = TextCompression.Decompress(compressedList);
         Console.WriteLine("\nDecompressed list:");
-        foreach (var item in decompressed_list) Console.WriteLine(item);
+        foreach (var item in decompressedList)
+        {
+            Console.WriteLine(item);
+        }
     }
 }
