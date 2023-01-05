@@ -21,7 +21,12 @@ public class DefaultConsoleProgram : IConsoleProgram
 
     public virtual void Run() { }
 
-    public virtual void Run(Action<IConsoleService> action)
+    public void Run(Action action)
+    {
+        action?.Invoke();
+    }
+
+    public void Run(Action<IConsoleService> action)
     {
         action?.Invoke(_console);
     }

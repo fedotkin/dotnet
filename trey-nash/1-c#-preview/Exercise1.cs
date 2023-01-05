@@ -3,13 +3,13 @@
 /// <summary>
 /// C# preview
 /// </summary>
-static class TextCompression
+public class TextCompression : ITextCompression
 {
     /// <summary>
     /// Reads from the text file.
     /// </summary>
     /// <param name="fileName"></param>
-    public static void TextReads(string fileName)
+    public void TextReads(string fileName)
     {
         using var reader = File.OpenText(fileName);
         string? item;
@@ -26,7 +26,7 @@ static class TextCompression
     /// <param name="num"></param>
     /// <param name="sym"></param>
     /// <returns></returns>
-    public static string AddToString(int num, char sym)
+    public string AddToString(int num, char sym)
     {
         string temp = "";
         if (sym == '\\') // If character is '\'
@@ -55,7 +55,7 @@ static class TextCompression
     /// </summary>
     /// <param name="inputList"></param>
     /// <returns></returns>
-    public static List<string> Сompress(List<string> inputList)
+    public List<string> Сompress(List<string> inputList)
     {
         List<string> tempList = new List<string>();
         for (int i = 0; i < inputList.Count; i++) // Compress each line in the list
@@ -100,7 +100,7 @@ static class TextCompression
     /// </summary>
     /// <param name="inputList"></param>
     /// <returns></returns>
-    public static List<string> Decompress(List<string> inputList)
+    public List<string> Decompress(List<string> inputList)
     {
         List<string> temp_list = new List<string>();
         for (int i = 0; i < inputList.Count; i++) // Compress each line in the list

@@ -1,15 +1,17 @@
 using Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
 using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
 
-namespace Fedotkin.Dotnet.TreyNash.ChapterExercises.Tests;
+namespace Fedotkin.Dotnet.TreyNash.ChapterExercises.Tests.Ch1;
 
 public class Chapter1Tests
 {
     private readonly Mock<IConsoleService> consoleServiceMock;
+    private readonly Mock<ITextCompression> textCompressionMock;
 
     public Chapter1Tests()
     {
         consoleServiceMock = new Mock<IConsoleService>();
+        textCompressionMock = new Mock<ITextCompression>();
     }
 
     [Fact]
@@ -32,7 +34,7 @@ public class Chapter1Tests
             });
 
         // Act
-        Chapter1.Run(consoleServiceMock.Object);
+        Chapter1.Run(consoleServiceMock.Object, textCompressionMock.Object);
 
         // Assert
         Assert.NotEmpty(consoleLog);
