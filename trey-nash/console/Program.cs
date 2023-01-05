@@ -1,72 +1,55 @@
-﻿using Fedotkin.Dotnet.TreyNash.ConsoleServices;
+﻿using Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
+using Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
+using Fedotkin.Dotnet.TreyNash.ConsoleServices;
 using Fedotkin.Dotnet.TreyNash.ConsoleServices.Implementations;
 using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using static System.Console;
 
 namespace Fedotkin.Dotnet.TreyNash.Console;
 
-///// <summary>
-///// Main entry point of the program.
-///// </summary>
-//Console.Write("Enter chapter number (1-17): ");
-//int chapterNo = 0;
-//while (chapterNo == 0)
-//{
-//    try { chapterNo = Convert.ToInt32(Console.ReadLine()); }
-//    catch { chapterNo = 0; }
-//}
-//// Select book chapter and run the demo
-//switch (chapterNo)
-//{
-//    case 1:
-//        Chapter1.Run();
-//        break;
-//    case 5:
-//        Chapter5.Run();
-//        break;
-//    default:
-//        Console.WriteLine("Chapter {0}: Sorry, there are no exercises and no implemented solutions to demonstrate!", chapterNo);
-//        break;
-//}
-
-//public void Run()
-//{
-//    _console.Write("Enter chapter number (1-17): ");
-//    int chapterNo = 0;
-//    while (chapterNo == 0)
-//    {
-//        try { chapterNo = Convert.ToInt32(_console.ReadLine()); }
-//        catch { chapterNo = 0; }
-//    }
-//    // Select book chapter and run the demo
-//    switch (chapterNo)
-//    {
-//        case 1:
-//            Chapter1.Run();
-//            break;
-//        case 5:
-//            Chapter5.Run();
-//            break;
-//        default:
-//            _console.WriteLine("Chapter {0}: Sorry, there are no exercises and no implemented solutions to demonstrate!", chapterNo);
-//            break;
-//    }
-//}
-
 internal class Program
 {
+    static void App(IConsoleService console)
+    {
+        console.Write("Enter chapter number (1-17): ");
+        int chapterNo = 0;
+        while (chapterNo == 0)
+        {
+            try { chapterNo = Convert.ToInt32(console.ReadLine()); }
+            catch { chapterNo = 0; }
+        }
+        // Select book chapter and run the demo
+        switch (chapterNo)
+        {
+            case 1:
+                Chapter1.Run();
+                break;
+            case 5:
+                Chapter5.Run();
+                break;
+            default:
+                console.WriteLine("Chapter {0}: Sorry, there are no exercises and no implemented solutions to demonstrate!", chapterNo);
+                break;
+        }
+    }
 
-    private static IConsoleProgram _program = null;
-
+    /// <summary>
+    /// Main entry point of the program.
+    /// </summary>
+    /// <param name="args">Console app arguments</param>
+    /// <returns>The asynch <see cref="Task"/> object to run by the console host.</returns>
     static async Task Main(string[] args)
     {
-        //_program.Run();
         using IHost host = InitializeHost(args);
 
         if (args.Length == 0 || args.Length > 0 && !args.Contains("--skipTest"))
             TestDIContainer(host);
+
+        var program = host.Services.GetService<IConsoleProgram>();
+        program.Run(App);
 
         await host.RunAsync();
     }
@@ -85,7 +68,8 @@ internal class Program
 
     static void RegisterServices(HostBuilderContext context, IServiceCollection services)
     {
-        services.AddSingleton<IConsoleProgram, DefaultConsoleProgram>();
+        services.TryAddSingleton<IConsoleProgram, DefaultConsoleProgram>();
+        services.TryAddSingleton<IConsoleService, DefaultConsoleService>();
     }
 
     static void RegisterDITestServices(HostBuilderContext context, IServiceCollection services)
