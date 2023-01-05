@@ -10,33 +10,15 @@ namespace Fedotkin.Dotnet.TreyNash.ConsoleServices.Implementations;
 /// </remarks>
 public class DefaultConsoleService : IConsoleService
 {
-    public void Clear()
-    {
-        Console.Clear();
-    }
+    public void Clear() => Console.Clear();
 
-    public ConsoleKeyInfo ReadKey()
-    {
-        return Console.ReadKey();
-    }
+    public ConsoleKeyInfo ReadKey() => Console.ReadKey();
 
-    public string ReadLine()
-    {
-        return Console.ReadLine();
-    }
+    public string ReadLine() => Console.ReadLine();
 
-    public void Write(string value)
-    {
-        Console.Write(value);
-    }
+    public void Write(string value) => Console.Write(value);
 
-    public void WriteLine(string value)
-    {
-        Console.WriteLine(value);
-    }
+    public void WriteLine(string value) => Console.WriteLine(value);
 
-    public void WriteLine(string format, object arg0)
-    {
-        Console.WriteLine(format, arg0);
-    }
+    public void WriteLine(string format, object arg0) => Console.WriteLine(format, arg0);
 }
