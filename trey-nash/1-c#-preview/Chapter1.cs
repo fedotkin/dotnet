@@ -1,5 +1,4 @@
-﻿using Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
-using Fedotkin.Dotnet.TreyNash.ConsoleServices;
+﻿using Fedotkin.Dotnet.TreyNash.ConsoleServices;
 using Fedotkin.Dotnet.TreyNash.ConsoleServices.Implementations;
 using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
 
@@ -19,7 +18,8 @@ public static class Chapter1
     /// </summary>
     public static void Run()
     {
-        Console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(TextCompression)} (1-2): "); int taskNo = 0;
+        Console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(TextCompression)} (1-2): ");
+        int taskNo = 0;
         while (taskNo == 0)
         {
             try { taskNo = Convert.ToInt32(_console.ReadLine()); }

@@ -9,4 +9,5 @@
 public interface IConsoleProgram
 {
     void Run();
+    void Run(Action<IConsoleService> action);
 }
