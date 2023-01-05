@@ -6,23 +6,16 @@ namespace Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
 
 public static class Chapter1
 {
-    private static readonly IConsoleService _console;
-
-    static Chapter1()
-    {
-        _console = new DefaultConsoleService();
-    }
-
     /// <summary>
     /// Runs the demo of <see cref="TextCompression"/>.
     /// </summary>
-    public static void Run()
+    public static void Run(IConsoleService console)
     {
-        Console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(TextCompression)} (1-2): ");
+        console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(TextCompression)} (1-2): ");
         int taskNo = 0;
         while (taskNo == 0)
         {
-            try { taskNo = Convert.ToInt32(_console.ReadLine()); }
+            try { taskNo = Convert.ToInt32(console.ReadLine()); }
             catch { taskNo = 0; }
         }
         // Select task number
@@ -35,7 +28,7 @@ public static class Chapter1
                 Task2();
                 break;
             default:
-                _console.WriteLine("Task {0}: Sorry, there are no task!", taskNo);
+                console.WriteLine("Task {0}: Sorry, there are no task!", taskNo);
                 break;
         }
     }

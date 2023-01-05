@@ -25,7 +25,7 @@ internal class Program
         switch (chapterNo)
         {
             case 1:
-                Chapter1.Run();
+                Chapter1.Run(console);
                 break;
             case 5:
                 Chapter5.Run();
