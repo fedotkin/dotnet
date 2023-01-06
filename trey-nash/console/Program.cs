@@ -27,25 +27,49 @@ internal class Program : DefaultConsoleProgram
     /// </summary>
     public override void Run()
     {
-        _console.Write("Enter chapter number (1-17): ");
-        int chapterNo = 0;
-        while (chapterNo == 0)
+        while (true)
         {
-            try { chapterNo = Convert.ToInt32(_console.ReadLine()); }
-            catch { chapterNo = 0; }
-        }
-        // Select book chapter and run the demo
-        switch (chapterNo)
-        {
-            case 1:
-                Chapter1.Run(_console, _compression);
-                break;
-            case 5:
-                Chapter5.Run();
-                break;
-            default:
-                _console.WriteLine("Chapter {0}: Sorry, there are no exercises and no implemented solutions to demonstrate!", chapterNo);
-                break;
+            _console.Write("\nEnter chapter number (1-17): ");
+            int chapterNo = 0;
+            while (chapterNo == 0)
+            {
+                try { chapterNo = Convert.ToInt32(_console.ReadLine()); }
+                catch { chapterNo = 0; }
+            }
+            // Select book chapter and run the demo
+            switch (chapterNo)
+            {
+                case 1:
+                    Chapter1.Run(_console, _compression);
+                    break;
+                case 5:
+                    Chapter5.Run();
+                    break;
+                default:
+                    _console.WriteLine("Chapter {0}: Sorry, there are no exercises and no implemented solutions to demonstrate!", chapterNo);
+                    break;
+            }
+
+            Write("\nEnter Ctrl+Q to Quit, Ctrl+E to Exit, Ctrl+L to Clear the window\nOr any key to show the next chapter demo... ");
+            ConsoleKeyInfo info = ReadKey();
+            if (info.Modifiers == ConsoleModifiers.Control)
+            {
+                if (info.Key == ConsoleKey.Q)
+                {
+                    WriteLine("Soft quitting...");
+                    Environment.ExitCode = 0;
+                    break; // while (true)
+                }
+                else if (info.Key == ConsoleKey.E)
+                {
+                    WriteLine("Force exitting...");
+                    Environment.Exit(1);
+                }
+                else if (info.Key == ConsoleKey.L)
+                {
+                    Clear();
+                }
+            }
         }
     }
 
@@ -61,7 +85,7 @@ internal class Program : DefaultConsoleProgram
         if (args.Length == 0 || args.Length > 0 && !args.Contains("--skipTest"))
             TestDIContainer(host);
 
-        WriteLine("Starting the Program...\n");
+        WriteLine("Starting the Program...");
 
         var program = host.Services.GetService<IConsoleProgram>();
         program.Run();
