@@ -1,6 +1,6 @@
 ﻿namespace Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
 
-static class Chapter5
+public static class Chapter5
 {
     /// <summary>
     /// Runs the demo of <see cref="Exercise1"/>.

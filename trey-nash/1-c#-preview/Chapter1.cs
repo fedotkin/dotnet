@@ -1,29 +1,34 @@
-﻿namespace Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
+﻿using Fedotkin.Dotnet.TreyNash.ConsoleServices;
+using Fedotkin.Dotnet.TreyNash.ConsoleServices.Implementations;
+using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
 
-static class Chapter1
+namespace Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
+
+public static class Chapter1
 {
     /// <summary>
     /// Runs the demo of <see cref="TextCompression"/>.
     /// </summary>
-    public static void Run()
+    public static void Run(IConsoleService console, ITextCompression compression)
     {
-        Console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(TextCompression)} (1-2): "); int taskNo = 0;
+        console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(TextCompression)} (1-2): ");
+        int taskNo = 0;
         while (taskNo == 0)
         {
-            try { taskNo = Convert.ToInt32(Console.ReadLine()); }
+            try { taskNo = Convert.ToInt32(console.ReadLine()); }
             catch { taskNo = 0; }
         }
         // Select task number
         switch (taskNo)
         {
             case 1:
-                Task1();
+                Task1(compression);
                 break;
             case 2:
-                Task2();
+                Task2(console, compression);
                 break;
             default:
-                Console.WriteLine("Task {0}: Sorry, there are no task!", taskNo);
+                console.WriteLine("Task {0}: Sorry, there are no task!", taskNo);
                 break;
         }
     }
@@ -31,16 +36,16 @@ static class Chapter1
     /// <summary>
     /// Starts <see cref="Task1"/> method from the <see cref="Exercise1"/> class.
     /// </summary>
-    public static void Task1()
+    public static void Task1(ITextCompression compression)
     {
         string fileName = "Exercise1.txt";
-        TextCompression.TextReads(fileName);
+        compression.TextReads(fileName);
     }
 
     /// <summary>
     /// Starts <see cref="Task2"/> method from the <see cref="Exercise1"/> class.
     /// </summary>
-    public static void Task2()
+    public static void Task2(IConsoleService console, ITextCompression compression)
     {
         List<string> startList = new List<string>(); // List of source strings
         startList.Add(@"
@@ -51,26 +56,26 @@ static class Chapter1
 | | | |  __/ | | (_) | \  /\  / (_) | |  | | (_| |_|
 \_| |_/\___|_|_|\___/   \/  \/ \___/|_|  |_|\__,_(_)");
 
-        Console.WriteLine("Start list:");
+        console.WriteLine("Start list:");
         foreach (var item in startList)
         {
-            Console.WriteLine(item);
+            console.WriteLine(item);
         }
 
         List<string> compressedList = new List<string>(); // Create a new list for compressed strings
-        compressedList = TextCompression.Сompress(startList);
-        Console.WriteLine("\nCompressed list:");
+        compressedList = compression.Сompress(startList);
+        console.WriteLine("\nCompressed list:");
         foreach (var item in compressedList)
         {
-            Console.WriteLine(item);
+            console.WriteLine(item);
         }
 
         List<string> decompressedList = new List<string>(); // Create a new list for unpacked strings
-        decompressedList = TextCompression.Decompress(compressedList);
-        Console.WriteLine("\nDecompressed list:");
+        decompressedList = compression.Decompress(compressedList);
+        console.WriteLine("\nDecompressed list:");
         foreach (var item in decompressedList)
         {
-            Console.WriteLine(item);
+            console.WriteLine(item);
         }
     }
 }
