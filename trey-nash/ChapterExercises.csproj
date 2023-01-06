@@ -21,6 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="1-c#-preview\Exercise1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="1-c#-preview\Exercise1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="Console.Services\ConsoleServices.csproj" />
   </ItemGroup>
 

@@ -38,7 +38,8 @@ public static class Chapter1
     /// </summary>
     public static void Task1(ITextCompression compression)
     {
-        string fileName = "Exercise1.txt";
+        string workingDirectory = Environment.CurrentDirectory;
+        string fileName = workingDirectory + "\\1-c#-preview\\Exercise1.txt";
         compression.TextReads(fileName);
     }
 
