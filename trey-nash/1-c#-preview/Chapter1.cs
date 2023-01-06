@@ -73,7 +73,7 @@ public static class Chapter1
 
         // Create a new list for compressed strings
         List<string> compressedList = new List<string>();
-        compressedList = compression.Сompress(startList);
+        compressedList = compression.Compress(startList);
         console.WriteLine("\nCompressed list:");
         foreach (var item in compressedList)
         {

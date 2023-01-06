@@ -155,14 +155,14 @@ public class Chapter1Tests
     }
 
     [Fact]
-    public void Task2_MainPath_ÑompressAndDecompressWithWritingToConsole()
+    public void Task2_MainPath_CompressAndDecompressWithWritingToConsole()
     {
         // Arrange
         var consoleLog = new List<string>();
         consoleServiceMock.Setup(x => x.WriteLine(It.IsAny<string>()))
             .Callback<string>(value => consoleLog.Add(value));
         List<string> actualStartList = new List<string>();
-        textCompressionMock.Setup(x => x.Ñompress(It.IsAny<List<string>>()))
+        textCompressionMock.Setup(x => x.Compress(It.IsAny<List<string>>()))
             .Callback<List<string>>(startList => actualStartList.AddRange(startList))
             .Returns(new List<string> { "compressedList item" });
         textCompressionMock.Setup(x => x.Decompress(It.IsAny<List<string>>()))
@@ -181,7 +181,7 @@ public class Chapter1Tests
         line = actualStartList.Last();
         Assert.Contains(line, consoleLog);
 
-        textCompressionMock.Verify(x => x.Ñompress(It.IsAny<List<string>>()));
+        textCompressionMock.Verify(x => x.Compress(It.IsAny<List<string>>()));
         Assert.Contains("\nCompressed list:", consoleLog);
         Assert.Contains("compressedList item", consoleLog);
 

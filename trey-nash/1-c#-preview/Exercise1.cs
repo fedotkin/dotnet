@@ -25,7 +25,7 @@ public class TextCompression : ITextCompression
     /// <param name="inputList">
     /// 
     /// </param>
-    public List<string> Сompress(List<string> inputList)
+    public List<string> Compress(List<string> inputList)
     {
         List<string> tempList = new List<string>();
         for (int i = 0; i < inputList.Count; i++) // Compress each string in the list
@@ -68,7 +68,7 @@ public class TextCompression : ITextCompression
 
     /// <summary>
     /// Method for adding data to a string for compression
-    /// (the method is auxiliary to the <see cref="TextCompression.Сompress(List{string})"/> method)
+    /// (the method is auxiliary to the <see cref="TextCompression.Compress(List{string})"/> method)
     /// </summary>
     /// <param name="lengthToString">
     /// Number of character (which is selected from the original string)
