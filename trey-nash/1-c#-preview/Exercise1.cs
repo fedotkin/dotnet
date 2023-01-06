@@ -8,7 +8,6 @@ public class TextCompression : ITextCompression
     /// <summary>
     /// Reads from the text file.
     /// </summary>
-    /// <param name="fileName"></param>
     public void TextReads(string fileName)
     {
         using var reader = File.OpenText(fileName);
@@ -21,52 +20,24 @@ public class TextCompression : ITextCompression
     }
 
     /// <summary>
-    /// Method for adding data to a string for compression
-    /// </summary>
-    /// <param name="num"></param>
-    /// <param name="sym"></param>
-    /// <returns></returns>
-    public string AddToString(int num, char sym)
-    {
-        string temp = "";
-        if (sym == '\\') // If character is '\'
-        {
-            for (int i = 0; i < num; i++) temp = temp + @"\\";
-            return temp;
-        }
-        else if (!Char.IsNumber(sym)) // If character is not a number
-            switch (num)
-            {
-                case 1: return temp + sym;
-                case 2: return temp + sym + sym;
-                default: return temp + num + sym;
-            }
-        else if (Char.IsNumber(sym)) // If character is a number
-            switch (num)
-            {
-                case 1: return temp + "\\" + sym;
-                default: return temp + num + "\\" + sym;
-            }
-        return temp;
-    }
-
-    /// <summary>
     /// Text compression method in the list
     /// </summary>
-    /// <param name="inputList"></param>
-    /// <returns></returns>
+    /// <param name="inputList">
+    /// 
+    /// </param>
     public List<string> Сompress(List<string> inputList)
     {
         List<string> tempList = new List<string>();
-        for (int i = 0; i < inputList.Count; i++) // Compress each line in the list
+        for (int i = 0; i < inputList.Count; i++) // Compress each string in the list
         {
             int length = 0;         // Number of identical characters
             int position = 0;       // Character position in a string
             char symbol;            // Character in a string
             string tempString = ""; // Temporary string to write
+
             while (position < inputList[i].Length)
             {
-                symbol = inputList[i][position];
+                symbol = inputList[i][position]; // Consider the character (which is selected from the original string)
                 if (position == inputList[i].Length - 1) // If the character is the last in the string
                 {
                     length = 1;
@@ -93,6 +64,40 @@ public class TextCompression : ITextCompression
             tempList.Add(tempString);
         }
         return tempList;
+    }
+
+    /// <summary>
+    /// Method for adding data to a string for compression
+    /// (the method is auxiliary to the <see cref="TextCompression.Сompress(List{string})"/> method)
+    /// </summary>
+    /// <param name="lengthToString">
+    /// Number of character (which is selected from the original string)
+    /// </param>
+    /// <param name="symbolToString">
+    /// Сharacter (which is selected from the original string)
+    /// </param>
+    public string AddToString(int lengthToString, char symbolToString) // Used Compression rules 4-8
+    {
+        string temp = "";
+        if (symbolToString == '\\') // If character is '\' (Compression rule 8)
+        {
+            for (int i = 0; i < lengthToString; i++) temp = temp + @"\\";
+            return temp;
+        }
+        else if (!Char.IsNumber(symbolToString)) // If character is not a number
+            switch (lengthToString)
+            {
+                case 1: return temp + symbolToString; // Compression rule 5
+                case 2: return temp + symbolToString + symbolToString; // Compression rule 5
+                default: return temp + lengthToString + symbolToString; // Compression rule 4
+            }
+        else if (Char.IsNumber(symbolToString)) // If character is a number
+            switch (lengthToString)
+            {
+                case 1: return temp + "\\" + symbolToString; // Compression rule 6
+                default: return temp + lengthToString + "\\" + symbolToString; // Compression rule 7
+            }
+        return temp;
     }
 
     /// <summary>
