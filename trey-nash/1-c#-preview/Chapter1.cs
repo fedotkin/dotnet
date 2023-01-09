@@ -1,6 +1,7 @@
 ﻿using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
+using Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
 
-namespace Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
+namespace Fedotkin.Dotnet.TreyNash;
 
 public static class Chapter1
 {
@@ -12,7 +13,7 @@ public static class Chapter1
         if (console == null) throw new ArgumentNullException(nameof(console));
         if (compression == null) throw new ArgumentNullException(nameof(compression));
 
-        console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(TextCompression)} (1-2): ");
+        console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(Exercise1.TextCompression)} (1-2): ");
         int taskNo = 0;
         while (taskNo == 0)
         {

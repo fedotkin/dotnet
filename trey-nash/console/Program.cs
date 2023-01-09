@@ -1,5 +1,4 @@
-﻿using Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
-using Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
+﻿using Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview; // question
 using Fedotkin.Dotnet.TreyNash.ConsoleServices;
 using Fedotkin.Dotnet.TreyNash.ConsoleServices.Implementations;
 using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
@@ -111,7 +110,7 @@ internal class Program : DefaultConsoleProgram
     {
         services.TryAddSingleton<IConsoleProgram, Program>();
         services.AddTransient<IConsoleService, DefaultConsoleService>()
-            .AddTransient<ITextCompression, TextCompression>();
+            .AddTransient<ITextCompression, Exercise1.TextCompression>();
     }
 
     static void RegisterDITestServices(HostBuilderContext context, IServiceCollection services)

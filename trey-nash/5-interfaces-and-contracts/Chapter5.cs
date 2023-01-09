@@ -1,4 +1,6 @@
-﻿namespace Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
+﻿using Fedotkin.Dotnet.TreyNash.Ch5_InterfacesAndContracts;
+
+namespace Fedotkin.Dotnet.TreyNash;
 
 public static class Chapter5
 {
