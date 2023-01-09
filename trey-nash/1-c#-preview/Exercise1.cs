@@ -32,34 +32,44 @@ public class Exercise1
             List<string> tempList = new List<string>();
             foreach (string line in inputList) // Compress each line in the list
             {
-                int length = 0;         // Number of identical characters
-                int position = 0;       // Character position in a string
-                char symbol;            // Character in a string
+                int position = 0;       // Symbol position in a string
+                char symbol;            // Symbol in a string
                 string tempString = ""; // Temporary string to write
 
                 while (position < line.Length)
                 {
-                    symbol = line[position]; // Consider the character (which is selected from the original string)
-                    if (position == line.Length - 1) // If the character is the last in the string
+                    symbol = line[position]; // Consider the symbol (which is selected from the original string)
+                    if (position == line.Length - 1) // If the symbol is the last in the string
                     {
-                        length = 1;
-                        tempString += AddToString(length, symbol);
+                        if (symbol == '\\') tempString += @"\\"; // If symbol is '\' (Rule 8)
+                        else if (!Char.IsNumber(symbol)) tempString += symbol; // If symbol is not a number (Rule 5)
+                        else if (Char.IsNumber(symbol)) tempString += $"\\{symbol}"; // If symbol is a number (Rule 6)
                         break;
                     }
-                    else if (line[position + 1] != symbol) // If single character
+                    else if (line[position + 1] != symbol) // If single symbol
                     {
-                        length = 1;
-                        tempString += AddToString(length, symbol);
-                        position += length;
+                        if (symbol == '\\') tempString += @"\\"; // If symbol is '\' (Rule 8)
+                        else if (!Char.IsNumber(symbol)) tempString += symbol; // If symbol is not a number (Rule 5)
+                        else if (Char.IsNumber(symbol)) tempString += $"\\{symbol}"; // If symbol is a number (Rule 6)
+                        position++;
                     }
-                    else // Same symbols
+                    else // Identical symbols 
                     {
-                        for (int j = 1; j < line.Length - position; j++) // Count the number of identical characters
+                        int length = 0; // Number of identical symbols
+                        for (int j = 1; j < line.Length - position; j++) // Count the number of identical symbols
                         {
                             if (line[position + j] == symbol) length = j + 1;
                             else break;
                         }
-                        tempString += AddToString(length, symbol);
+                        if (!Char.IsNumber(symbol)) // If symbol is not a number
+                        {
+                            if (length == 2) tempString += $"{symbol}{symbol}"; // (Rule 5)
+                            else tempString += $"{length}{symbol}"; // (Rule 4)
+                        }
+                        else // If symbol is a number
+                        {
+                            tempString += $"{length}\\{symbol}"; // (Rule 7)
+                        }
                         position += length;
                     }
                 }
@@ -68,38 +78,9 @@ public class Exercise1
             return tempList;
         }
 
-        /// <summary>
-        /// Method for adding data to a string for compression
-        /// (the method is auxiliary to the <see cref="TextCompression.Compress(List{string})"/> method)
-        /// </summary>
-        /// <param name="lengthToString">
-        /// Number of character (which is selected from the original string)
-        /// </param>
-        /// <param name="symbolToString">
-        /// Сharacter (which is selected from the original string)
-        /// </param>
-        public string AddToString(int lengthToString, char symbolToString) // Used Compression rules 4-8
+        public string AddToString(int lengthToString, char symbolToString) // delete
         {
-            string temp = "";
-            if (symbolToString == '\\') // If character is '\' (Compression rule 8)
-            {
-                for (int i = 0; i < lengthToString; i++) temp = temp + @"\\";
-                return temp;
-            }
-            else if (!Char.IsNumber(symbolToString)) // If character is not a number
-                switch (lengthToString)
-                {
-                    case 1: return temp + symbolToString; // Compression rule 5
-                    case 2: return temp + symbolToString + symbolToString; // Compression rule 5
-                    default: return temp + lengthToString + symbolToString; // Compression rule 4
-                }
-            else if (Char.IsNumber(symbolToString)) // If character is a number
-                switch (lengthToString)
-                {
-                    case 1: return temp + "\\" + symbolToString; // Compression rule 6
-                    default: return temp + lengthToString + "\\" + symbolToString; // Compression rule 7
-                }
-            return temp;
+            return "";
         }
 
         /// <summary>
