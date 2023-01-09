@@ -1,5 +1,4 @@
-﻿using Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview; // question
-using Fedotkin.Dotnet.TreyNash.ConsoleServices;
+﻿using Fedotkin.Dotnet.TreyNash.ConsoleServices;
 using Fedotkin.Dotnet.TreyNash.ConsoleServices.Implementations;
 using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,14 +10,16 @@ namespace Fedotkin.Dotnet.TreyNash.Console;
 
 internal class Program : DefaultConsoleProgram
 {
-    private readonly IConsoleService _console;
-    private readonly ITextCompression _compression;
+    private readonly IServiceProvider services;
+    private readonly IConsoleService console;
 
-    public Program(IConsoleService consoleService, ITextCompression textCompression)
-        : base(consoleService)
+    public Program(IServiceProvider provider)
+        : base(provider)
     {
-        _console = consoleService;
-        _compression = textCompression;
+        if (provider == null) throw new ArgumentNullException(nameof(provider));
+
+        services = provider;
+        console = provider.GetService<IConsoleService>();
     }
 
     /// <summary>
@@ -28,45 +29,45 @@ internal class Program : DefaultConsoleProgram
     {
         while (true)
         {
-            _console.Write("\nEnter chapter number (1-17): ");
+            console.Write("\nEnter chapter number (1-17): ");
             int chapterNo = 0;
             while (chapterNo == 0)
             {
-                try { chapterNo = Convert.ToInt32(_console.ReadLine()); }
+                try { chapterNo = Convert.ToInt32(console.ReadLine()); }
                 catch { chapterNo = 0; }
             }
             // Select book chapter and run the demo
             switch (chapterNo)
             {
                 case 1:
-                    Chapter1.Run(_console, _compression);
+                    Chapter1.Run(this);
                     break;
                 case 5:
                     Chapter5.Run();
                     break;
                 default:
-                    _console.WriteLine("Chapter {0}: Sorry, there are no exercises and no implemented solutions to demonstrate!", chapterNo);
+                    console.WriteLine("Chapter {0}: Sorry, there are no exercises and no implemented solutions to demonstrate!", chapterNo);
                     break;
             }
 
-            Write("\nEnter Ctrl+Q to Quit, Ctrl+E to Exit, Ctrl+L to Clear the window\nOr any key to show the next chapter demo... ");
-            ConsoleKeyInfo info = ReadKey();
+            console.Write("\nEnter Ctrl+Q to Quit, Ctrl+E to Exit, Ctrl+L to Clear the window\nOr any key to show the next chapter demo... ");
+            ConsoleKeyInfo info = console.ReadKey();
             if (info.Modifiers == ConsoleModifiers.Control)
             {
                 if (info.Key == ConsoleKey.Q)
                 {
-                    WriteLine("Soft quitting...");
+                    console.WriteLine("Soft quitting...");
                     Environment.ExitCode = 0;
                     break; // while (true)
                 }
                 else if (info.Key == ConsoleKey.E)
                 {
-                    WriteLine("Force exitting...");
+                    console.WriteLine("Force exitting...");
                     Environment.Exit(1);
                 }
                 else if (info.Key == ConsoleKey.L)
                 {
-                    Clear();
+                    console.Clear();
                 }
             }
         }
@@ -86,7 +87,8 @@ internal class Program : DefaultConsoleProgram
 
         WriteLine("Starting the Program...");
 
-        var program = host.Services.GetService<IConsoleProgram>();
+        using IServiceScope serviceScope = host.Services.CreateScope();
+        var program = serviceScope.ServiceProvider.GetService<IConsoleProgram>();
         program.Run();
         
         WriteLine($"\nProgram has exited with code '{Environment.ExitCode}'\n");
@@ -109,8 +111,8 @@ internal class Program : DefaultConsoleProgram
     static void RegisterServices(HostBuilderContext context, IServiceCollection services)
     {
         services.TryAddSingleton<IConsoleProgram, Program>();
-        services.AddTransient<IConsoleService, DefaultConsoleService>()
-            .AddTransient<ITextCompression, Exercise1.TextCompression>();
+        services.AddScoped<IConsoleService, DefaultConsoleService>()
+            .AddExercise1Services();
     }
 
     static void RegisterDITestServices(HostBuilderContext context, IServiceCollection services)

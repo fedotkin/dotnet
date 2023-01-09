@@ -13,11 +13,17 @@ namespace Fedotkin.Dotnet.TreyNash.ConsoleServices.Implementations;
 public class DefaultConsoleProgram : IConsoleProgram
 {
     private readonly IConsoleService _console;
+    private readonly IServiceProvider _services;
 
-    public DefaultConsoleProgram(IConsoleService consoleService)
+    public DefaultConsoleProgram(IServiceProvider provider)
     {
-        _console = consoleService;
+        if (provider == null) throw new ArgumentNullException(nameof(provider));
+
+        _services = provider;
+        _console = (IConsoleService)provider.GetService(typeof(IConsoleService));
     }
+
+    public IServiceProvider Services => _services;
 
     public virtual void Run() { }
 

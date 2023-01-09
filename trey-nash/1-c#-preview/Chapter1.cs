@@ -1,10 +1,22 @@
-﻿using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
-using Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
+﻿using Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
+using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
+using static Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview.Exercise1;
 
 namespace Fedotkin.Dotnet.TreyNash;
 
 public static class Chapter1
 {
+    public static void Run(IConsoleProgram program)
+    {
+        if (program == null) throw new ArgumentNullException(nameof(program));
+
+        var services = program.Services;
+        IConsoleService console = (IConsoleService)services.GetService(typeof(IConsoleService));
+        ITextCompression compression = (ITextCompression)services.GetService(typeof(ITextCompression));
+
+        Run(console, compression); // inject services as parameters
+    }
+
     /// <summary>
     /// Runs the demo of <see cref="TextCompression"/>.
     /// </summary>
@@ -13,7 +25,7 @@ public static class Chapter1
         if (console == null) throw new ArgumentNullException(nameof(console));
         if (compression == null) throw new ArgumentNullException(nameof(compression));
 
-        console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(Exercise1.TextCompression)} (1-2): ");
+        console.Write($"{nameof(Chapter1)} demo.\nEnter task number of {nameof(TextCompression)} (1-2): ");
         int taskNo = 0;
         while (taskNo == 0)
         {

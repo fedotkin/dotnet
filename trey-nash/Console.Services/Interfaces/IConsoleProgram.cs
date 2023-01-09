@@ -8,7 +8,19 @@
 /// </remarks>
 public interface IConsoleProgram
 {
+    /// <summary>
+    /// Gets services of current DI-container.
+    /// </summary>
+    /// <remarks>
+    /// Use it for DI in static methods via a service injection as parameter.
+    /// </remarks>
+    IServiceProvider Services { get; }
+
+    /// <summary>
+    /// Runs the program.
+    /// </summary>
     void Run();
+    
     void Run(Action action);
     void Run(Action<IConsoleService> action);
 }

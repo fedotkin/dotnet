@@ -1,6 +1,5 @@
-using Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
 using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
-using System.Threading.Tasks;
+using static Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview.Exercise1;
 
 namespace Fedotkin.Dotnet.TreyNash.ChapterExercises.Tests;
 
