@@ -21,12 +21,13 @@ public class Exercise1
         public void TextReads(string fileName)
         {
             using var reader = File.OpenText(fileName);
-            string? item;
+            string item;
             do
             {
                 item = reader.ReadLine();
                 Console.WriteLine(item);
-            } while (item != null);
+            }
+            while (item != null);
         }
 
         /// <summary>
