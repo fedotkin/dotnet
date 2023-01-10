@@ -7,7 +7,6 @@ public class Exercise1
 {
     public interface ITextCompression
     {
-        string AddToString(int num, char sym);
         List<string> Decompress(List<string> inputList);
         void TextReads(string fileName);
         List<string> Compress(List<string> inputList);
@@ -103,11 +102,6 @@ public class Exercise1
                 tempList.Add(tempString);
             }
             return tempList;
-        }
-
-        public string AddToString(int lengthToString, char symbolToString) // TODO: Delete the method
-        {
-            return "";
         }
 
         /// <summary>
