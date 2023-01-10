@@ -168,7 +168,7 @@ public class Exercise1
                     }
 
                     // C. If symbol is a number
-                    if (Char.IsNumber(symbol))
+                    else
                     {
                         // C.1. If the second symbol is '\'
                         if (line[position + 1] == '\\')
