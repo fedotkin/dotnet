@@ -32,12 +32,10 @@ public class Exercise1
         /// <summary>
         /// Text compression method in the list
         /// </summary>
-        /// <param name="inputList">
-        /// 
-        /// </param>
         public List<string> Compress(List<string> inputList)
         {
             List<string> tempList = new List<string>();
+
             foreach (string line in inputList) // Compress each line in the list
             {
                 int position = 0;       // Symbol position in a string
@@ -46,22 +44,40 @@ public class Exercise1
 
                 while (position < line.Length)
                 {
-                    symbol = line[position]; // Consider the symbol (which is selected from the original string)
-                    if (position == line.Length - 1) // If the symbol is the last in the string
+                    symbol = line[position];
+
+                    // A. If the symbol is the last in the string
+                    if (position == line.Length - 1)
                     {
-                        if (symbol == '\\') tempString += @"\\"; // If symbol is '\' (Rule 8)
-                        else if (!Char.IsNumber(symbol)) tempString += symbol; // If symbol is not a number (Rule 5)
-                        else if (Char.IsNumber(symbol)) tempString += $"\\{symbol}"; // If symbol is a number (Rule 6)
+                        // A.1. If symbol is '\' (Compression Rule 8)
+                        if (symbol == '\\') tempString += @"\\";
+
+                        // A.2. If symbol is not a number (Compression Rule 5)
+                        else if (!Char.IsNumber(symbol)) tempString += symbol;
+
+                        // A.3. If symbol is a number (Compression Rule 6)
+                        else tempString += $"\\{symbol}";
+
                         break;
                     }
-                    else if (line[position + 1] != symbol) // If single symbol
+
+                    // B. If single symbol
+                    else if (line[position + 1] != symbol)
                     {
-                        if (symbol == '\\') tempString += @"\\"; // If symbol is '\' (Rule 8)
-                        else if (!Char.IsNumber(symbol)) tempString += symbol; // If symbol is not a number (Rule 5)
-                        else if (Char.IsNumber(symbol)) tempString += $"\\{symbol}"; // If symbol is a number (Rule 6)
+                        // B.1. If symbol is '\' (Compression Rule 8)
+                        if (symbol == '\\') tempString += @"\\";
+
+                        // B.2. If symbol is not a number (Compression Rule 5)
+                        else if (!Char.IsNumber(symbol)) tempString += symbol;
+
+                        // B.3. If symbol is a number (Compression Rule 6)
+                        else tempString += $"\\{symbol}";
+
                         position++;
                     }
-                    else // Identical symbols 
+
+                    // C. Identical symbols 
+                    else
                     {
                         int length = 0; // Number of identical symbols
                         for (int j = 1; j < line.Length - position; j++) // Count the number of identical symbols
@@ -69,15 +85,17 @@ public class Exercise1
                             if (line[position + j] == symbol) length = j + 1;
                             else break;
                         }
-                        if (!Char.IsNumber(symbol)) // If symbol is not a number
+
+                        // C.1. If symbol is not a number
+                        if (!Char.IsNumber(symbol))
                         {
-                            if (length == 2) tempString += $"{symbol}{symbol}"; // (Rule 5)
-                            else tempString += $"{length}{symbol}"; // (Rule 4)
+                            if (length == 2) tempString += $"{symbol}{symbol}"; // If two symbols (Compression Rule 5)
+                            else tempString += $"{length}{symbol}"; // If more than two symbols (Compression Rule 4)
                         }
-                        else // If symbol is a number
-                        {
-                            tempString += $"{length}\\{symbol}"; // (Rule 7)
-                        }
+
+                        // C.2. If symbol is a number
+                        else tempString += $"{length}\\{symbol}"; // (Compression Rule 7)
+
                         position += length;
                     }
                 }
@@ -86,7 +104,7 @@ public class Exercise1
             return tempList;
         }
 
-        public string AddToString(int lengthToString, char symbolToString) // delete
+        public string AddToString(int lengthToString, char symbolToString) // TODO: Delete the method
         {
             return "";
         }
@@ -94,77 +112,96 @@ public class Exercise1
         /// <summary>
         /// Method for unpacking text in a list
         /// </summary>
-        /// <param name="inputList"></param>
-        /// <returns></returns>
         public List<string> Decompress(List<string> inputList)
         {
             List<string> tempList = new List<string>();
-            foreach (string line in inputList) // Compress each line in the list
+
+            foreach (string line in inputList) // Decompress each line in the list
             {
-                int length = 0;         // Number of characters
-                int position = 0;       // Character position in a string
-                char symbol;            // Character in a string
+                int length = 0;         // Number of symbols
+                int position = 0;       // Symbol position in a string
+                char symbol;            // Symbol in a string
                 string tempString = ""; // Temporary string to write
+
                 while (position < line.Length)
                 {
                     symbol = line[position];
-                    if (symbol == '\\') // 1. If character is '\'
+
+                    // A. If symbol is '\'
+                    if (symbol == '\\')
                     {
-                        if (line[position + 1] == '\\') // 1.1. If the second character is '\'
-                            tempString += '\\';
-                        else // 1.2. Second character is not '\'
-                            tempString += line[position + 1];
+                        // A.1. If the second symbol is '\'
+                        if (line[position + 1] == '\\') tempString += '\\';
+
+                        // A.2. Second symbol is not '\'
+                        else tempString += line[position + 1];
+
                         length = 2;
                         position += length;
                     }
-                    else if (symbol != '\\' & !Char.IsNumber(symbol)) // 2. If the character is not '\' and a number
+
+                    // B. If the symbol is not '\' and a number
+                    else if (symbol != '\\' && !Char.IsNumber(symbol))
                     {
-                        if (position == line.Length - 1) // 2.1. If the character is the last in the string
+                        // B.1. If the symbol is the last in the string
+                        if (position == line.Length - 1)
                         {
                             tempString += symbol;
                             break;
                         }
-                        else if (line[position + 1] == symbol) // 2.2. If the second character is the same
+
+                        // B.2. If the second symbol is the same
+                        else if (line[position + 1] == symbol)
                         {
-                            tempString = tempString + symbol + symbol;
+                            tempString += $"{symbol}{symbol}";
                             length = 2;
                         }
-                        else // 2.3. The second character is not the same
+
+                        // B.3. The second symbol is not the same
+                        else
                         {
                             tempString += symbol;
                             length = 1;
                         }
+
                         position += length;
                     }
-                    if (Char.IsNumber(symbol)) // 3. If character is a number
+
+                    // C. If symbol is a number
+                    if (Char.IsNumber(symbol))
                     {
-                        if (line[position + 1] == '\\') // 3.1. If the second character is '\'
+                        // C.1. If the second symbol is '\'
+                        if (line[position + 1] == '\\')
                             for (int j = 0; j < symbol - '0'; j++)
                             {
                                 tempString += line[position + 2];
                                 length = 3;
                             }
-                        else if (line[position + 1] == '\\' & !Char.IsNumber(line[position + 1]))
-                            // 3.2. If the second character is not '\' and a number
+
+                        // C.2. If the second symbol is not '\' and a number
+                        else if (line[position + 1] == '\\' && !Char.IsNumber(line[position + 1]))
                             for (int j = 0; j < symbol - '0'; j++)
                             {
                                 tempString += line[position + 1];
                                 length = 2;
                             }
-                        else // 3.3. The second and following characters are a number (the number of digits is 2 or more)
+
+                        // C.3. The second and following symbols are a number (the number of digits is 2 or more)
+                        else
                         {
                             length = 0;
-                            while (length < line.Length & Char.IsNumber(line[position + length]))
+                            while (length < line.Length && Char.IsNumber(line[position + length]))
                             {
                                 length++;
                             }
-                            int number_of_digits = Convert.ToInt32(line.Substring(position, length));
-                            for (int j = 0; j < number_of_digits; j++)
+                            int numberOfDigits = Convert.ToInt32(line.Substring(position, length));
+                            for (int j = 0; j < numberOfDigits; j++)
                             {
                                 tempString += line[position + length];
                             }
                             length++;
                         }
+
                         position += length;
                     }
                 }
