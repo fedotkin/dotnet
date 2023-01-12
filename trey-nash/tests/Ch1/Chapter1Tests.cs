@@ -119,14 +119,14 @@ public class Chapter1Tests
         // Arrange
         string expectedBasePath = Environment.CurrentDirectory;
         string actualFilePath = string.Empty;
-        textCompressionMock.Setup(x => x.TextReads(It.IsAny<string>()))
+        textCompressionMock.Setup(x => x.ReadText(It.IsAny<string>()))
             .Callback<string>((path) => actualFilePath = path);
 
         // Act
         Chapter1.Task1(textCompressionMock.Object);
 
         Assert.StartsWith(expectedBasePath, actualFilePath);
-        textCompressionMock.Verify(x => x.TextReads(It.IsAny<string>()));
+        textCompressionMock.Verify(x => x.ReadText(It.IsAny<string>()));
     }
 
     [Fact]

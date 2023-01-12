@@ -1,4 +1,6 @@
-﻿namespace Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
+﻿using Fedotkin.Dotnet.TreyNash.ConsoleServices.Interfaces;
+
+namespace Fedotkin.Dotnet.TreyNash.Ch1_CSharpPreview;
 
 /// <summary>
 /// C# preview
@@ -8,25 +10,36 @@ public class Exercise1
     public interface ITextCompression
     {
         List<string> Decompress(List<string> inputList);
-        void TextReads(string fileName);
+        void ReadText(string fileName);
         List<string> Compress(List<string> inputList);
     }
 
     public class TextCompression : ITextCompression
     {
+        private readonly IConsoleService console;
+
+        public TextCompression(IConsoleService console)
+        {
+            if (console == null)
+                throw new ArgumentNullException(nameof(console));
+
+            this.console = console;
+        }
+
         /// <summary>
         /// Reads from the text file.
         /// </summary>
-        public void TextReads(string fileName)
+        public void ReadText(string fileName)
         {
             using var reader = File.OpenText(fileName);
-            string item;
+            string line;
             do
             {
-                item = reader.ReadLine();
-                Console.WriteLine(item);
+                line = reader.ReadLine();
+                if (line != null)
+                    console.WriteLine(line);
             }
-            while (item != null);
+            while (line != null);
         }
 
         /// <summary>

@@ -56,7 +56,7 @@ public static class Chapter1
 
         string workingDirectory = Environment.CurrentDirectory;
         string fileName = workingDirectory + "\\1-c#-preview\\Exercise1.txt";
-        compression.TextReads(fileName);
+        compression.ReadText(fileName);
     }
 
     /// <summary>
